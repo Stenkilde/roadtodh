@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="small-12 columns">
+		<h1>Hi!</h1>
+	</div>
+	<div class="small-12 columns">
+		<form ng-submit="submitPost()">
+			<div class="row collapse">
+				<div class="small-1 columns">
+					<span class="prefix">Username</span>
+				</div>
+				<div class="small-10 columns">
+					<input type="text" ng-model="post.username" placeholder="Write your username here!"/>
+				</div>
+				<div class="small-1 columns">
+					<input type="submit" value="Add Post" class="button postfix"/>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<hr/>
+<!-- This should be moved to it's own view when possible -->
+<div class="row">
+	<table class="full-width">
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th class="right">Delete Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="post in posts">
+				<td>{{post.username}}</td>
+				<td class="right">
+					<a ng-click="deletePost(post)">delete</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
