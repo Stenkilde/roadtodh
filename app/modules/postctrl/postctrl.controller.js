@@ -23,16 +23,16 @@
 
 		};
 
-		$scope.posts = Post.all;
-		$scope.post = {name: ''};
+		vm.posts = Post.all;
+		vm.post = {name: ''};
 
-		$scope.submitPost = function () {
-			Post.create($scope.post).then(function () {
-				$scope.post = {name: ''};
+		vm.submitPost = function () {
+			Post.create(vm.post).then(function () {
+				vm.post = {name: ''};
 			});
 		};
 
-		$scope.deletePost = function (post) {
+		vm.deletePost = function (post) {
 			Post.delete(post);
 		};
 
